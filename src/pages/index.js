@@ -6,6 +6,7 @@ import Navbar from '@/component/Navbar'
 import Main from '@/component/Main'
 import { About } from '@/component/About'
 import { Skills } from '@/component/Skills'
+import { Contact } from '@/component/Contact'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -23,6 +24,7 @@ export default function Home() {
       <Main/>
       <About/>
       <Skills/>
+      <Contact/>
     </>
   )
 }
