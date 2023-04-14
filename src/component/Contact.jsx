@@ -1,18 +1,16 @@
 import { Grid,Box, Typography } from '@mui/material';
 import Card from '@mui/material/Card';
 import Image from 'next/image'
-import CardContent from '@mui/material/CardContent';
-import { FaLinkedinIn,FaGithub } from "react-icons/fa";
-import { AiOutlineMail } from 'react-icons/ai';
-import { BsPersonLinesFill } from 'react-icons/bs';
 import ContactForm from './contactForm';
+import { Element } from 'react-scroll';
+import {FaLinkedinIn} from 'react-icons/fa';
 
 export const Contact = ()=>{
     
-   
 
     return(
-        <Box sx={{ background: '#ebecf1', p:'1rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
+        <Element name="contact">
+        <Box  sx={{ background: '#ebecf1', p:'1rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
     
     <Box sx={{p:'1rem'}}>
              <Typography sx = {{color: '#5751E5',fontSize: '1.5rem',fontWeight: '500'}}>CONTACT</Typography>            
@@ -22,7 +20,7 @@ export const Contact = ()=>{
         
         <Grid item xs={12} lg={4} md={4}>
    
-            <Card  sx={{background: '#ebecf1', mt:'1rem',display: 'flex',flexDirection:'column',gap:'4rem',border: "16px solid #ebecf1",borderRadius: "2%",boxShadow: "2px 9px 15px 4px rgba(0, 0, 0, 0.5)",transition: "transform 0.5s","&:hover": {transform: "scale(1.01)",} }}>
+            <Card  sx={{background: '#ebecf1', mt:'1rem',display: 'flex',flexDirection:'column',gap:'4rem',border: "16px solid #ebecf1",borderRadius: "2%",boxShadow: "9px 9px 9px 9px rgba(0, 0, 0, 0.1)",transition: "transform 0.5s","&:hover": {transform: "scale(1.01)",} }}>
             <Box sx={{marginTop:'1rem'}}>
                 <Image
                 src = '/contact.jpg'
@@ -48,8 +46,11 @@ export const Contact = ()=>{
                             CONNECT WITH ME
                         </Typography>
                         <Box sx = {{display:'flex',justifyContent:'center',mb:'2rem'}}>
+                        <a href='https://www.linkedin.com/in/muhammad-usama-55bb731b0/' target='_blank' style={{color:'black'}}>
+
                             <Box sx={{  display: 'flex',alignItems: 'center', boxShadow: '5px 6px 10px rgba(0, 0, 0, 0.1)',height: '4rem',width:'4rem', padding: '1.5rem',borderRadius: '50%',
-                                transition: "transform 0.5s","&:hover": {transform: "scale(1.1)"}}}> <AiOutlineMail/> </Box>
+                                transition: "transform 0.5s","&:hover": {transform: "scale(1.1)"}}}> <FaLinkedinIn/> </Box>
+                                </a>
                         </Box>  
                     </Box>
                 </Box>
@@ -60,13 +61,17 @@ export const Contact = ()=>{
         </Grid>
         
         <Grid item xs={12} lg={8} md={8}>
-            <Box sx={{background:"#ebecf1" ,p:'1rem'}}>
+        <Card  sx={{background: '#ebecf1', mt:'1rem',display: 'flex',flexDirection:'column',gap:'4rem',border: "16px solid #ebecf1",borderRadius: "2%",boxShadow: "9px 9px 9px 9px rgba(0, 0, 0, 0.1)" }}>
+
+            <Box>
                 <ContactForm/>
             </Box>
+            </Card>
         </Grid>
 
         </Grid>
         </Box>
+        </Element>
     )
 
 } 

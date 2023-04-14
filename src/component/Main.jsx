@@ -1,9 +1,8 @@
 
 import { Box, Typography } from '@mui/material';
-import { FaLinkedinIn,FaGithub } from "react-icons/fa";
+import { FaLinkedinIn,FaGithub,FaInstagram,FaFacebook } from "react-icons/fa";
 import { AiOutlineMail } from 'react-icons/ai';
-import { BsPersonLinesFill } from 'react-icons/bs';
-
+import { Link,Element } from 'react-scroll';
 const Main = ()=>{
 
   const roundedBox = `
@@ -18,9 +17,16 @@ const Main = ()=>{
     padding: 1.5rem;
   }
   `;
+  const handleClick = (e) => {
+    e.preventDefault(); // prevent default behavior of the link
+    const gmailUrl = `https://mail.google.com/mail/u/0/#inbox?compose=new&to=usamanaseerusamanaseer@gmail.com`;
+    window.location.href = gmailUrl;
+  };
+  
 
 return (
-<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh',background:"#ebecf1" ,p:'1rem'}}>
+  <Element name="home">
+<Box  sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh',background:"#ebecf1" ,p:'1rem'}}>
   <Box sx={{ maxWidth: '600px', textAlign: 'center' }}>
     <Typography  sx={{ fontSize: '14px' ,backgroundColor:'#cbcbcb' }} component='span'>LET&apos;S BUILD SOMETHING TOGEHTER</Typography>
     <Box sx={{ mt: 2 }}>
@@ -40,16 +46,27 @@ return (
           </Typography>
           <Box sx = {{display:'flex',gap:'2.5rem',mt: 4,justifyContent:'center'}}>
             <style jsx>{roundedBox}</style>
-              <Box className = 'roundedBox' sx={{transition: "transform 0.5s","&:hover": {transform: "scale(1.1)"}}}> <FaLinkedinIn/> </Box>
+            
+            <a href='https://www.linkedin.com/in/muhammad-usama-55bb731b0/' target='_blank' style={{color:'black'}}>
+              <Box className = 'roundedBox' sx={{transition: "transform 0.5s","&:hover": {transform: "scale(1.1)"}}} > <FaLinkedinIn/> </Box>
+            </a>
+              
+            <a href='https://github.com/MuhammadUsama786-eng' target='_blank' style={{color:'black'}}>
               <Box className = 'roundedBox' sx={{transition: "transform 0.5s","&:hover": {transform: "scale(1.1)"}}}>  <FaGithub/> </Box>
-              <Box className = 'roundedBox' sx={{transition: "transform 0.5s","&:hover": {transform: "scale(1.1)"}}}> <AiOutlineMail/> </Box>
-              <Box className = 'roundedBox' sx={{transition: "transform 0.5s","&:hover": {transform: "scale(1.1)"}}}> <BsPersonLinesFill/> </Box>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100008374276081&mibextid=ZbWKwL"  style={{ color: "black" }}>
+              <Box className = 'roundedBox' sx={{transition: "transform 0.5s","&:hover": {transform: "scale(1.1)"}}}> <FaFacebook/> </Box>
+            </a>
+            <a href='https://instagram.com/mr_usama333?igshid=Yjk4NWM2ZWVkMw==' target='_blank' style={{color:'black'}}>
+              <Box className = 'roundedBox' sx={{transition: "transform 0.5s","&:hover": {transform: "scale(1.1)"}}}> <FaInstagram/> </Box>
+            </a>
           </Box>         
         </Box>
       </Box>
     </Box>
   </Box>
 </Box>
+</Element>
 )
 }
 

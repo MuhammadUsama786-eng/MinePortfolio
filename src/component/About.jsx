@@ -1,9 +1,12 @@
 import { Grid,Box, Typography } from '@mui/material';
 import Image from 'next/image'
+import { Element } from 'react-scroll';
+
 export const About = ()=>{
 
     return (
-        <Box sx={{ display: 'flex', background: '#ebecf1',p:'1rem' }}>
+      <Element name = "about">
+        <Box  sx={{ display: 'flex', background: '#ebecf1',p:'1rem' }}>
   <Grid container spacing={2}>
     <Grid item xs={12} md={8}>
       <Box>
@@ -41,7 +44,7 @@ export const About = ()=>{
 
   </Grid>
 </Box>
-
+</Element>
     )
 
 }

@@ -1,12 +1,13 @@
 import { Grid,Box, Typography } from '@mui/material';
-
+import { Element } from 'react-scroll';
 import { CardForSkills } from './Card';
 
 
 export const Skills = ()=>{
 
     return(
-        <Box sx={{ background: '#ebecf1',p:'1rem' }}>
+        <Element name = "skills">
+        <Box  sx={{ background: '#ebecf1',p:'1rem' }}>
         <Box>
         <Typography sx={{ fontSize: '1.5rem', fontWeight: '500', color: '#5751E5' }}>SKILLS</Typography>
         <Typography sx={{ marginTop: '1rem', fontSize: '2rem', fontWeight: 'bold' }}>What I can do</Typography>
@@ -49,6 +50,7 @@ export const Skills = ()=>{
 
         </Grid>
         </Box>
+        </Element>
     )
 
 }

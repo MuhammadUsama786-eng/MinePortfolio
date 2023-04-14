@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
+import { Download } from '@mui/icons-material';
+import Button from '@mui/material/Button';
 import {
   AppBar,
   Toolbar,
@@ -12,7 +14,7 @@ import {
   ListItemText,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Link from 'next/link';
+import { Link } from 'react-scroll';
 
 const drawerWidth = 240;
 
@@ -41,6 +43,8 @@ const Navbar = () => {
       <AppBar position="fixed" sx = {{background:"#ebecf1",boxShadow:'0px 0px 0px 0px'}}>
         <Toolbar>
         <Box sx={{ display: { xs: 'block', md: 'none' }, mr: 'auto'  }}>
+
+
             <IconButton
               onClick={handleDrawerOpen}
             >
@@ -48,30 +52,45 @@ const Navbar = () => {
             </IconButton>
           </Box>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1,color: '#676565' }}>
-            My App
+    <a href='/Resume.pdf' download style={{textDecoration:'none'}}>
+
+
+
+    <Button
+      variant="outlined"
+      startIcon={<Download />}
+      sx={{color:"#5c58da",border:"1px solid #5c58da",borderRadius:'2rem',boxShadow: '5px 6px 10px rgba(0, 0, 0, 0.1)',transition: "transform 0.5s","&:hover": {transform: "scale(1.1)"}}}
+    >
+      Resume
+    </Button>
+    </a>
+
           </Typography>
 
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '20px' }}>
       <List sx={{ display: 'flex' }}>
       
-      {/* <Link href='/'> */}
+      <Link to='home' smooth>
         <ListItem button sx={{color: '#676565' }}>
           <ListItemText  primary="HOME" sx={{'& .MuiTypography-root': {fontSize: '12px',},}}/>
         </ListItem>
-      {/* </Link> */}
-      
+      </Link>
+
+      <Link  to='about' smooth>
         <ListItem button sx={{ color: '#676565' }}>
           <ListItemText primary="ABOUT" sx={{'& .MuiTypography-root': {fontSize: '12px',},}}/>
         </ListItem>
+        </Link>
+      <Link  to='skills' smooth>
         <ListItem button sx={{ color: '#676565' }}>
           <ListItemText primary="SKILLS" sx={{'& .MuiTypography-root': {fontSize: '12px',},}}/>
         </ListItem>
-        <ListItem button sx={{ color: '#676565' }}>
-          <ListItemText primary="PROJECTS" sx={{'& .MuiTypography-root': {fontSize: '12px',},}}/>
-        </ListItem>
+        </Link>
+      <Link  to='contact' smooth>
         <ListItem button sx={{ color: '#676565' }}>
           <ListItemText primary="CONTACTS" sx={{'& .MuiTypography-root': {fontSize: '12px',},}}/>
         </ListItem>
+        </Link>
       </List>
     </Box>
 
@@ -100,23 +119,29 @@ const Navbar = () => {
 
 
         <Box sx={{ overflowY: 'auto' }}>
-          <List >
-          <ListItem button sx={{color: '#676565' }}>
-          <ListItemText  primary="HOME" sx={{'& .MuiTypography-root': {fontSize: '12px',},}}/>
+        <List>
+      <Link to='home' smooth>
+        <ListItem button sx={{color: '#676565' }}>
+          <ListItemText  primary="HOME" sx={{'& .MuiTypography-root': {fontSize: '12px'},fontWeight:'600'}}/>
         </ListItem>
+      </Link>
+
+      <Link  to='about' smooth>
         <ListItem button sx={{ color: '#676565' }}>
           <ListItemText primary="ABOUT" sx={{'& .MuiTypography-root': {fontSize: '12px',},}}/>
         </ListItem>
+        </Link>
+      <Link  to='skills' smooth>
         <ListItem button sx={{ color: '#676565' }}>
           <ListItemText primary="SKILLS" sx={{'& .MuiTypography-root': {fontSize: '12px',},}}/>
         </ListItem>
-        <ListItem button sx={{ color: '#676565' }}>
-          <ListItemText primary="PROJECTS" sx={{'& .MuiTypography-root': {fontSize: '12px',},}}/>
-        </ListItem>
+        </Link>
+      <Link  to='contact' smooth>
         <ListItem button sx={{ color: '#676565' }}>
           <ListItemText primary="CONTACTS" sx={{'& .MuiTypography-root': {fontSize: '12px',},}}/>
         </ListItem>
-          </List>
+        </Link>
+      </List>
         </Box>
       </Drawer>
       <DrawerHeader />
