@@ -1,8 +1,9 @@
 
 import { Box, Typography } from '@mui/material';
 import { FaLinkedinIn,FaGithub,FaInstagram,FaFacebook } from "react-icons/fa";
-import { AiOutlineMail } from 'react-icons/ai';
-import { Link,Element } from 'react-scroll';
+import { Element } from 'react-scroll';
+import { BsCodeSlash } from 'react-icons/bs';
+
 const Main = ()=>{
 
   const roundedBox = `
@@ -17,11 +18,6 @@ const Main = ()=>{
     padding: 1.5rem;
   }
   `;
-  const handleClick = (e) => {
-    e.preventDefault(); // prevent default behavior of the link
-    const gmailUrl = `https://mail.google.com/mail/u/0/#inbox?compose=new&to=usamanaseerusamanaseer@gmail.com`;
-    window.location.href = gmailUrl;
-  };
   
 
 return (
